@@ -8,13 +8,14 @@ package com.example.MeuPrimeiroProjetoJava;
  *
  * @author DELL
  */
-public class Nome {
+public class Soma {
     
-    String nome;
+    float primeroNumero;
+    float segundoNumero;
     
-    public String cumprimentarPessoa(){
-        String cumprimento = "Oi, " + nome + " seja bem-vinda ao mundo Java";
-        return cumprimento;
+    public float somarNumeros(){
+    
+        float somar = primeroNumero + segundoNumero;
+        return somar;
     }
-    
 }
