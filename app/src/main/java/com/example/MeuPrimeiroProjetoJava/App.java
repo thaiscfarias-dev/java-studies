@@ -28,14 +28,22 @@ public class App {
 //        System.out.println("A soma dos dois numeros e: " + soma.somarNumeros());
 
         /* média de dois numeros */
-        Media media = new Media();
-        System.out.println("Vamos calcular a media de dois numeros!");
-        System.out.println("Digite o primeiro numero: ");
-        media.primeroNumero = leitor.nextFloat();
+//        Media media = new Media();
+//        System.out.println("Vamos calcular a media de dois numeros!");
+//        System.out.println("Digite o primeiro numero: ");
+//        media.primeroNumero = leitor.nextFloat();
+//
+//        System.out.println("Digite o segundo numero: ");
+//        media.segundoNumero = leitor.nextFloat();
+//
+//        System.out.println("A media dos dois numeros e: " + media.calcularMedia());
 
-        System.out.println("Digite o segundo numero: ");
-        media.segundoNumero = leitor.nextFloat();
-
-        System.out.println("A media dos dois numeros e: " + media.calcularMedia());
+        /* conversão de Celsius para Fahrenheit */
+        Temperatura temperatura = new Temperatura();
+        System.out.println("Qual temperatura em Celsius voce deseja converter? ");
+        
+        temperatura.celsius = leitor.nextFloat();
+        System.out.println("A temperatura em Fahrenheit e: " 
+                + temperatura.converterTemperatura());
     }
 }
