@@ -1,6 +1,5 @@
 package com.example.MeuPrimeiroProjetoJava;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
@@ -8,37 +7,34 @@ public class App {
     public static void main(String[] args) {
 
         Menu menu = new Menu();
+        Leitor leitor = new Leitor();
 
-        try(Scanner scanner = new Scanner(System.in)){
-        
-            menu.exibir();
-            int opcao = lerNumero(scanner);
+        try (Scanner scanner = new Scanner(System.in)) {
+
+            int opcao;
 
             do {
+
+                menu.exibir();
+                opcao = Leitor.lerNumero(scanner);
+
                 switch (opcao) {
-                    case 1 ->
-                        menu.inserirNumeros();
-                    case 2 ->
-                        menu.procurarNumero();
+                    case 1 -> {
+                        menu.inserirNumero(scanner);
+                    }
+                    case 2 -> {
+                        System.out.println("Qual número deseja buscar? ");
+                        menu.procurarNumero(Leitor.lerNumero(scanner));
+                    }
                     case 3 ->
                         menu.mostrarTodos();
-                    default ->
+                    case 4 ->
                         System.out.println("Até logo!");
+                    default ->
+                        System.out.println("Opção inválida!");
                 }
             } while (opcao != 4);
         }
 
     }
-
-    public static int lerNumero(Scanner scanner) {
-        while (true) {
-            try {
-                return scanner.nextInt();
-            } catch (InputMismatchException e) {
-                System.out.println("Entrada inválida. Digite apenas números");
-                scanner.next();
-            }
-        }
-    }
-
 }
